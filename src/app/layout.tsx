@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
+import DigitalTwinChat from "@/components/DigitalTwinChat";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
         <main className="lg:ml-64 min-h-screen pt-14 lg:pt-0">
           {children}
         </main>
+        <DigitalTwinChat />
       </body>
     </html>
   );
