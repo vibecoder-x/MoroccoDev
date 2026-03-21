@@ -90,9 +90,9 @@ export default function Sidebar() {
             <div className="status-dot" />
             <span className="text-xs font-mono text-slate-500">available</span>
           </div>
-          <p className="text-[10px] font-mono text-slate-700 mt-2">
-            Casablanca, Morocco
-          </p>
+          <span className="text-[10px] text-slate-500 font-[family-name:var(--font-mono)] uppercase tracking-widest mt-1 block">
+            Marrakech, Morocco
+          </span>
         </div>
       </aside>
 
