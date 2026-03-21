@@ -32,19 +32,29 @@ const ventures = [
     name: "BTCIndexer",
     domain: "BTCIndexer.com",
     url: "https://btcindexer.com",
+    thumb: "https://image.thum.io/get/width/600/crop/400/https://btcindexer.com",
     value: "Real-time Bitcoin block scanner, transaction indexer & wallet analytics engine.",
   },
   {
     name: "WorldNews.day",
     domain: "WorldNews.day",
     url: "https://worldnews.day",
+    thumb: "https://image.thum.io/get/width/600/crop/400/https://worldnews.day",
     value: "Fully autonomous, AI-curated global news — zero human editors, 24/7 coverage.",
   },
   {
     name: "Superfox",
     domain: "Superfox.net",
     url: "https://superfox.net",
+    thumb: "https://image.thum.io/get/width/600/crop/400/https://superfox.net",
     value: "Interactive children's education platform — learning through play and creativity.",
+  },
+  {
+    name: "CalculatorRobot",
+    domain: "CalculatorRobot.com",
+    url: "https://calculatorrobot.com",
+    thumb: "https://image.thum.io/get/width/600/crop/400/https://calculatorrobot.com",
+    value: "AI-powered multi-purpose calculator — math, finance, science & conversion tools.",
   },
 ];
 
@@ -134,17 +144,17 @@ export default function DashboardPage() {
           <motion.div key={v.name} variants={fade}
             className={`${card} p-0 flex flex-col overflow-hidden group hover:border-emerald-500/15 transition-colors`}
           >
-            {/* Website Preview Window */}
+            {/* Website Preview Thumbnail */}
             <a href={v.url} target="_blank" rel="noopener noreferrer" className="block relative">
               <div className="relative w-full h-44 overflow-hidden bg-slate-900 cursor-pointer">
-                <iframe
-                  src={v.url}
-                  title={v.name}
-                  className="w-[200%] h-[200%] origin-top-left scale-50 pointer-events-none border-0"
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={v.thumb}
+                  alt={`${v.name} homepage`}
+                  className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                   loading="lazy"
-                  sandbox="allow-scripts allow-same-origin"
                 />
-                <div className="absolute inset-0 bg-transparent group-hover:bg-white/[0.03] transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
               </div>
             </a>
 
