@@ -29,22 +29,22 @@ const domainNames = [
 /* ─── Venture Stack Data ─── */
 const ventures = [
   {
-    name: "Agentic Morocco",
-    domain: "AgenticMorocco.com",
-    value: "Sovereign AI infrastructure for the Kingdom. Building the backbone of Morocco AI 2030.",
-    color: "emerald",
-  },
-  {
     name: "BTCIndexer",
     domain: "BTCIndexer.com",
+    url: "https://btcindexer.com",
     value: "Real-time Bitcoin block scanner, transaction indexer & wallet analytics engine.",
-    color: "orange",
   },
   {
     name: "WorldNews.day",
     domain: "WorldNews.day",
+    url: "https://worldnews.day",
     value: "Fully autonomous, AI-curated global news — zero human editors, 24/7 coverage.",
-    color: "cyan",
+  },
+  {
+    name: "Superfox",
+    domain: "Superfox.net",
+    url: "https://superfox.net",
+    value: "Interactive children's education platform — learning through play and creativity.",
   },
 ];
 
@@ -129,58 +129,46 @@ export default function DashboardPage() {
           </div>
         </motion.div>
 
-        {/* ── 2. Venture Cards ── */}
+        {/* ── 2. Project Cards with Website Previews ── */}
         {ventures.map((v) => (
           <motion.div key={v.name} variants={fade}
-            className={`${card} p-5 flex flex-col justify-between group hover:border-emerald-500/15 transition-colors`}
+            className={`${card} p-0 flex flex-col overflow-hidden group hover:border-emerald-500/15 transition-colors`}
           >
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-[family-name:var(--font-mono)] text-xs text-white font-semibold">{v.name}</span>
-                <div className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-[9px] font-[family-name:var(--font-mono)] text-emerald-400/70 uppercase tracking-wider">Live</span>
-                </div>
+            {/* Website Preview Window */}
+            <a href={v.url} target="_blank" rel="noopener noreferrer" className="block relative">
+              <div className="relative w-full h-44 overflow-hidden bg-slate-900 cursor-pointer">
+                <iframe
+                  src={v.url}
+                  title={v.name}
+                  className="w-[200%] h-[200%] origin-top-left scale-50 pointer-events-none border-0"
+                  loading="lazy"
+                  sandbox="allow-scripts allow-same-origin"
+                />
+                <div className="absolute inset-0 bg-transparent group-hover:bg-white/[0.03] transition-colors" />
               </div>
-              <p className="text-slate-500 text-[11px] leading-relaxed">{v.value}</p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-white/[0.04]">
-              <span className="text-[10px] font-[family-name:var(--font-mono)] text-slate-600">{v.domain}</span>
+            </a>
+
+            {/* Info */}
+            <div className="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-[family-name:var(--font-mono)] text-xs text-white font-semibold">{v.name}</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-[9px] font-[family-name:var(--font-mono)] text-emerald-400/70 uppercase tracking-wider">Live</span>
+                  </div>
+                </div>
+                <p className="text-slate-500 text-[11px] leading-relaxed">{v.value}</p>
+              </div>
+              <div className="mt-3 pt-3 border-t border-white/[0.04] flex items-center justify-between">
+                <span className="text-[10px] font-[family-name:var(--font-mono)] text-slate-600">{v.domain}</span>
+                <a href={v.url} target="_blank" rel="noopener noreferrer" className="text-[10px] font-[family-name:var(--font-mono)] text-emerald-400/60 hover:text-emerald-400 transition-colors">
+                  Visit →
+                </a>
+              </div>
             </div>
           </motion.div>
         ))}
-
-        {/* ── 3. GITEX 2026 — Buyer Card (glowing, spans remaining col) ── */}
-        <motion.div variants={fade}
-          className={`${card} md:col-span-2 xl:col-span-1 p-6 relative overflow-hidden border-emerald-500/10`}
-        >
-          {/* Glow effect */}
-          <div className="absolute -top-20 -right-20 w-48 h-48 bg-emerald-500/[0.07] rounded-full blur-3xl pointer-events-none" />
-          <div className="relative z-10">
-            <h2 className="font-[family-name:var(--font-mono)] text-sm text-white font-semibold mb-1">
-              Strategic Buyer
-            </h2>
-            <p className="text-[10px] font-[family-name:var(--font-mono)] text-emerald-400/60 uppercase tracking-wider mb-5">
-              GITEX Africa 2026
-            </p>
-            <div className="space-y-3">
-              {[
-                { icon: "⚡", label: "GPU Infrastructure" },
-                { icon: "🧠", label: "Sovereign AI" },
-                { icon: "🔗", label: "Web3" },
-              ].map((b) => (
-                <div key={b.label} className="flex items-center gap-3 bg-white/[0.03] rounded-xl px-3 py-2.5 border border-white/[0.04]">
-                  <span className="text-base">{b.icon}</span>
-                  <span className="font-[family-name:var(--font-mono)] text-[11px] text-white">{b.label}</span>
-                </div>
-              ))}
-            </div>
-            <a href="/gitex"
-              className="mt-5 w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-[family-name:var(--font-mono)] uppercase tracking-wider hover:bg-emerald-500/20 transition-colors">
-              Book Meeting →
-            </a>
-          </div>
-        </motion.div>
       </div>
     </motion.div>
   );
