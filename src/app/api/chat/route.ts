@@ -31,7 +31,7 @@ export async function POST(req: Request) {
     }
 
     const payload = {
-      model: "meta-llama/llama-3.1-8b-instruct:free",
+      model: "google/gemini-2.0-flash-exp:free",
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
         ...messages
