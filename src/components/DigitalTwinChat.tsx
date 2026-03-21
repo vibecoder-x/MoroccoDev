@@ -46,11 +46,11 @@ export default function DigitalTwinChat() {
         body: JSON.stringify({ messages: newMessages }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch response");
-      }
-
       const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to fetch response");
+      }
       
       let assistantMessage = "Désolé, an error occurred. Please try again.";
       if (data.choices && data.choices[0]?.message?.content) {
@@ -62,11 +62,11 @@ export default function DigitalTwinChat() {
       }
       
       setMessages((prev) => [...prev, { role: "assistant", content: assistantMessage }]);
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: "Oops—system error. Check the API key or try again later." },
+        { role: "assistant", content: `${error.message}` },
       ]);
     } finally {
       setIsLoading(false);

@@ -31,7 +31,7 @@ export async function POST(req: Request) {
     }
 
     const payload = {
-      model: "nvidia/llama-3.1-nemotron-70b-instruct:free",
+      model: "meta-llama/llama-3.1-8b-instruct:free",
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
         ...messages
@@ -51,16 +51,16 @@ export async function POST(req: Request) {
       body: JSON.stringify(payload),
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error("OpenRouter Error:", errorText);
+      console.error("OpenRouter Error:", data);
       return NextResponse.json(
-        { error: "Error communicating with AI service" },
-        { status: 502 }
+        { error: `OpenRouter Error: ${data.error?.message || JSON.stringify(data)}` },
+        { status: response.status }
       );
     }
 
-    const data = await response.json();
     return NextResponse.json(data);
 
   } catch (error) {
