@@ -99,8 +99,8 @@ function TwinConsole() {
 /* ─── Page ─── */
 export default function AgentPage() {
   return (
-    <motion.div className="p-6 lg:p-8" variants={stagger} initial="hidden" animate="show">
-      <motion.div variants={fade} className="mb-6">
+    <motion.div className="p-6 lg:p-8 min-h-screen flex flex-col items-center justify-center text-center" variants={stagger} initial="hidden" animate="show">
+      <motion.div variants={fade} className="mb-6 flex flex-col items-center">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 mb-4">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-[10px] font-[family-name:var(--font-mono)] text-slate-500 tracking-widest uppercase">
@@ -115,7 +115,7 @@ export default function AgentPage() {
         </p>
       </motion.div>
 
-      <motion.div variants={fade} className="backdrop-blur-xl bg-white/5 border border-white/[0.06] rounded-3xl p-6 max-w-2xl">
+      <motion.div variants={fade} className="backdrop-blur-xl bg-white/5 border border-white/[0.06] rounded-3xl p-6 w-full max-w-2xl text-left">
         <TwinConsole />
       </motion.div>
     </motion.div>
