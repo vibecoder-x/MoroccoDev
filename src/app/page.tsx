@@ -15,10 +15,15 @@ const fade = {
 
 /* ─── Domain Marquee Data ─── */
 const domainNames = [
-  "SelfAim.com", "SymbolicGPT.com", "ServyAI.com", "VectorDbs.com",
+  "SymbolicGPT.com", "ServyAI.com", "VectorDbs.com",
   "AutoMorocco.com", "AgenticMena.com", "AgentPerception.com", "RCPagent.com",
   "SmartMarrakech.com", "Marrakechtourism.com", "idhub.xyz", "MoroccoDev.com",
   "BTCIndexer.com", "WorldNews.day", "DIDdomains.com", "WantedAgent.com",
+  "ArificialEra.com", "3Ddraft.com", "AgentsLTD.com", "AutoObject.com",
+  "CalculatorRobot.com", "USDcalculator.com", "CanadaDesk.com", "ColleagueAgent.com",
+  "DownTownAbudhabi.com", "EndingGame.com", "Leurai.com", "Nowvi.com",
+  "majorID.com", "MarrakechCulture.com", "MoroccoEdu.com", "MarrakechMap.com",
+  "MoroccoBook.com", "OpenModality.com", "Robotike.com", "Sablor.com",
 ];
 
 /* ─── Venture Stack Data ─── */
@@ -103,15 +108,22 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* Domain Marquee — inside the profile card */}
+          {/* Domain Marquee — seamless infinite scroll */}
           <div className="mt-8 pt-6 border-t border-white/[0.06]">
             <div className="relative overflow-hidden h-6">
               <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950/80 to-transparent z-10" />
               <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950/80 to-transparent z-10" />
-              <div className="flex gap-8 animate-marquee whitespace-nowrap">
-                {[...domainNames, ...domainNames].map((d, i) => (
-                  <span key={i} className="text-xs font-[family-name:var(--font-mono)] text-slate-400">{d}</span>
-                ))}
+              <div className="marquee-track">
+                <div className="marquee-content">
+                  {domainNames.map((d, i) => (
+                    <span key={`a-${i}`} className="text-xs font-[family-name:var(--font-mono)] text-slate-400 mx-4">{d}</span>
+                  ))}
+                </div>
+                <div className="marquee-content" aria-hidden="true">
+                  {domainNames.map((d, i) => (
+                    <span key={`b-${i}`} className="text-xs font-[family-name:var(--font-mono)] text-slate-400 mx-4">{d}</span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

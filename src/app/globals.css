@@ -133,11 +133,18 @@
   50% { opacity: 0; }
 }
 
-/* ===== Domain Marquee ===== */
-@keyframes marquee {
+/* ===== Seamless Domain Marquee ===== */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+@keyframes marquee-scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
-.animate-marquee {
-  animation: marquee 15s linear infinite;
 }
