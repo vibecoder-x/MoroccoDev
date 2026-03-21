@@ -17,7 +17,7 @@ const fade = {
 const domainNames = [
   "SymbolicGPT.com", "ServyAI.com", "VectorDbs.com",
   "AutoMorocco.com", "AgenticMena.com", "AgentPerception.com", "RCPagent.com",
-  "SmartMarrakech.com", "Marrakechtourism.com", "idhub.xyz", "MoroccoDev.com",
+  "SmartMarrakech.com", "MarrakechTourism.com", "idhub.xyz", "MoroccoDev.com",
   "BTCIndexer.com", "WorldNews.day", "DIDdomains.com", "WantedAgent.com",
   "ArificialEra.com", "3Ddraft.com", "AgentsLTD.com", "AutoObject.com",
   "CalculatorRobot.com", "USDcalculator.com", "CanadaDesk.com", "ColleagueAgent.com",
