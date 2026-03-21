@@ -92,25 +92,27 @@ export default function DashboardPage() {
             {/* Stats */}
             <div className="shrink-0 text-center md:text-right space-y-4">
               <div>
-                <div className="font-[family-name:var(--font-mono)] text-4xl font-black text-white">2,000<span className="text-emerald-400">+</span></div>
+                <div className="font-[family-name:var(--font-mono)] text-4xl font-black text-white">2,500<span className="text-emerald-400">+</span></div>
                 <div className="text-[10px] font-[family-name:var(--font-mono)] text-slate-500 uppercase tracking-wider mt-0.5">Managed Domains</div>
               </div>
               <div className="h-px bg-white/[0.06] w-24 mx-auto md:ml-auto md:mr-0" />
               <div>
-                <div className="font-[family-name:var(--font-mono)] text-4xl font-black text-white">5<span className="text-emerald-400">+</span></div>
-                <div className="text-[10px] font-[family-name:var(--font-mono)] text-slate-500 uppercase tracking-wider mt-0.5">Active AI Projects</div>
+                <div className="font-[family-name:var(--font-mono)] text-4xl font-black text-white">10<span className="text-emerald-400">+</span></div>
+                <div className="text-[10px] font-[family-name:var(--font-mono)] text-slate-500 uppercase tracking-wider mt-0.5">AI Projects Acquired</div>
               </div>
             </div>
           </div>
 
           {/* Domain Marquee — inside the profile card */}
-          <div className="relative overflow-hidden h-8 mt-8 pt-6 border-t border-white/[0.06]">
-            <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[rgba(255,255,255,0.05)] to-transparent z-10" />
-            <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[rgba(255,255,255,0.05)] to-transparent z-10" />
-            <div className="flex gap-8 animate-marquee whitespace-nowrap">
-              {[...domainNames, ...domainNames].map((d, i) => (
-                <span key={i} className="text-xs font-[family-name:var(--font-mono)] text-slate-500">{d}</span>
-              ))}
+          <div className="mt-8 pt-6 border-t border-white/[0.06]">
+            <div className="relative overflow-hidden h-6">
+              <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950/80 to-transparent z-10" />
+              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950/80 to-transparent z-10" />
+              <div className="flex gap-8 animate-marquee whitespace-nowrap">
+                {[...domainNames, ...domainNames].map((d, i) => (
+                  <span key={i} className="text-xs font-[family-name:var(--font-mono)] text-slate-400">{d}</span>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
