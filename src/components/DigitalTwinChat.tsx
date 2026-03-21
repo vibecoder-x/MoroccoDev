@@ -8,12 +8,6 @@ type Message = {
   content: string;
 };
 
-const QUICK_ACTIONS = [
-  "Tell me about Agentic Morocco",
-  "Why GITEX?",
-  "Math & AI?",
-];
-
 export default function DigitalTwinChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -112,7 +106,7 @@ export default function DigitalTwinChat() {
                   <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-slate-900"></div>
                 </div>
                 <div>
-                  <h3 className="text-white text-sm font-semibold font-[family-name:var(--font-mono)]">Digital Badr</h3>
+                  <h3 className="text-white text-sm font-semibold font-[family-name:var(--font-mono)]">Badr Agent</h3>
                   <p className="text-emerald-400/70 text-[10px] uppercase tracking-wider font-[family-name:var(--font-mono)]">Agent online</p>
                 </div>
               </div>
@@ -156,21 +150,8 @@ export default function DigitalTwinChat() {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Quick Actions & Input Box */}
+            {/* Input Box */}
             <div className="p-3 bg-slate-900/50 border-t border-slate-800">
-              <div className="flex overflow-x-auto gap-2 pb-3 mb-1 custom-scrollbar hide-scrollbar-arrows">
-                {QUICK_ACTIONS.map((action) => (
-                  <button
-                    key={action}
-                    onClick={() => sendMessage(action)}
-                    disabled={isLoading}
-                    className="shrink-0 px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800/50 hover:bg-emerald-500/10 hover:border-emerald-500/30 hover:text-emerald-400 text-xs text-slate-400 font-[family-name:var(--font-mono)] transition-all whitespace-nowrap disabled:opacity-50"
-                  >
-                    {action}
-                  </button>
-                ))}
-              </div>
-
               <form onSubmit={handleSubmit} className="flex items-center gap-2">
                 <input
                   type="text"
