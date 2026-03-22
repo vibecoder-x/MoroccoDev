@@ -13,9 +13,8 @@ const projects = [
     status: "development" as const,
     color: "orange",
     icon: (
-      <Image src="/btcindexerLOGO.png" alt="BTCIndexer logo" width={24} height={24} className="object-contain rounded" />
+      <Image src="/btcindexerLOGO.png" alt="BTCIndexer logo" width={48} height={48} className="object-contain" />
     ),
-    iconBg: "bg-orange-50",
     tags: ["Bitcoin", "Indexer", "Blockchain", "Wallets"],
   },
   {
@@ -26,9 +25,8 @@ const projects = [
     status: "live" as const,
     color: "cyan",
     icon: (
-      <Image src="/WorldNewsLogo.png" alt="WorldNews.day logo" width={24} height={24} className="object-contain rounded" />
+      <Image src="/WorldNewsLogo.png" alt="WorldNews.day logo" width={48} height={48} className="object-contain" />
     ),
-    iconBg: "bg-cyan-50",
     tags: ["AI News", "Automation", "NLP", "24/7"],
   },
   {
@@ -39,9 +37,8 @@ const projects = [
     status: "development" as const,
     color: "purple",
     icon: (
-      <Image src="/superfoxLOGO.webp" alt="Superfox logo" width={24} height={24} className="object-contain rounded" />
+      <Image src="/superfoxLOGO.webp" alt="Superfox logo" width={48} height={48} className="object-contain" />
     ),
-    iconBg: "bg-purple-50",
     tags: ["EdTech", "Kids", "AI", "Gamification"],
   },
   {
@@ -52,9 +49,8 @@ const projects = [
     status: "live" as const,
     color: "emerald",
     icon: (
-      <Image src="/calculatorrobotlogo.png" alt="CalculatorRobot logo" width={24} height={24} className="object-contain rounded" />
+      <Image src="/calculatorrobotlogo.png" alt="CalculatorRobot logo" width={48} height={48} className="object-contain" />
     ),
-    iconBg: "bg-emerald-50",
     tags: ["Calculator", "AI Tools", "Finance", "Science"],
   },
 ];
@@ -104,7 +100,7 @@ export default function LabsPage() {
             className="bg-white border border-slate-200 shadow-sm shadow-slate-200/50 rounded-2xl p-8 transition-shadow hover:shadow-md"
           >
             <div className="flex items-start justify-between mb-6">
-              <div className={`p-3 ${project.iconBg} rounded-xl`}>
+              <div className="shrink-0">
                 {project.icon}
               </div>
               <StatusBadge status={project.status} />
