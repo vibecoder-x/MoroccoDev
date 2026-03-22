@@ -1,24 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import StatusBadge from "@/components/StatusBadge";
 
 const projects = [
-  {
-    name: "AgenticMorocco.com",
-    tagline: "Sovereign AI Infrastructure",
-    description:
-      "Building Morocco's sovereign AI backbone. Agentic systems, local LLMs, and autonomous infrastructure aligned with the Morocco AI 2030 strategy.",
-    status: "alpha" as const,
-    color: "emerald",
-    icon: (
-      <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-    iconBg: "bg-emerald-50",
-    tags: ["Sovereign AI", "LLM", "Morocco 2030", "Agentic"],
-  },
   {
     name: "BTCIndexer.com",
     tagline: "Advanced Blockchain Data Extraction",
@@ -27,9 +13,7 @@ const projects = [
     status: "development" as const,
     color: "orange",
     icon: (
-      <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-      </svg>
+      <Image src="/btcindexerLOGO.png" alt="BTCIndexer logo" width={24} height={24} className="object-contain rounded" />
     ),
     iconBg: "bg-orange-50",
     tags: ["Bitcoin", "Indexer", "Blockchain", "Wallets"],
@@ -42,9 +26,7 @@ const projects = [
     status: "live" as const,
     color: "cyan",
     icon: (
-      <svg className="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-      </svg>
+      <Image src="/WorldNewsLogo.png" alt="WorldNews.day logo" width={24} height={24} className="object-contain rounded" />
     ),
     iconBg: "bg-cyan-50",
     tags: ["AI News", "Automation", "NLP", "24/7"],
@@ -57,12 +39,23 @@ const projects = [
     status: "development" as const,
     color: "purple",
     icon: (
-      <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
+      <Image src="/superfoxLOGO.webp" alt="Superfox logo" width={24} height={24} className="object-contain rounded" />
     ),
     iconBg: "bg-purple-50",
     tags: ["EdTech", "Kids", "AI", "Gamification"],
+  },
+  {
+    name: "CalculatorRobot",
+    tagline: "AI-powered multi-purpose calculator",
+    description:
+      "Advanced multi-purpose calculator handling math, finance, science, and conversion tools with AI-powered insights.",
+    status: "live" as const,
+    color: "emerald",
+    icon: (
+      <Image src="/calculatorrobotlogo.png" alt="CalculatorRobot logo" width={24} height={24} className="object-contain rounded" />
+    ),
+    iconBg: "bg-emerald-50",
+    tags: ["Calculator", "AI Tools", "Finance", "Science"],
   },
 ];
 
