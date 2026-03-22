@@ -139,6 +139,14 @@ export default function DashboardPage() {
           </div>
         </motion.div>
 
+        {/* ── Section Title ── */}
+        <div className="md:col-span-2 xl:col-span-4 mt-8 mb-2 px-2">
+          <h2 className="font-[family-name:var(--font-mono)] text-xl font-black text-slate-900 flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            Acquired Live Projects
+          </h2>
+        </div>
+
         {/* ── 2. Project Cards with Website Previews ── */}
         {ventures.map((v) => (
           <motion.div key={v.name} variants={fade}
@@ -179,6 +187,25 @@ export default function DashboardPage() {
             </div>
           </motion.div>
         ))}
+
+        {/* ── 3. IDHUB Premium Domains Promo ── */}
+        <motion.div variants={fade} className={`${card} md:col-span-2 xl:col-span-4 p-8 mt-4 flex flex-col md:flex-row items-center gap-8 group`} >
+           <div className="shrink-0 bg-white p-2 rounded-3xl border border-slate-100 shadow-sm">
+             <Image src="/idhub.png" alt="idhub.xyz logo" width={120} height={120} className="rounded-2xl object-cover" />
+           </div>
+           <div className="flex-1 text-center md:text-left">
+             <h3 className="font-[family-name:var(--font-mono)] text-3xl font-black text-slate-900 tracking-tight">idhub.xyz</h3>
+             <p className="text-emerald-600 font-[family-name:var(--font-mono)] text-xs uppercase tracking-widest mt-1 mb-3 font-semibold">Home of Premium Domains shown as future objects</p>
+             <p className="text-slate-600 text-sm leading-relaxed max-w-3xl">
+               idhub.xyz is the exclusive home of my premium domain portfolio. Every domain is positioned not just as a web address, but as a high-value future digital asset and sovereign identity object ready for incubation.
+             </p>
+           </div>
+           <div className="shrink-0 mt-4 md:mt-0">
+             <a href="https://idhub.xyz" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3.5 bg-slate-900 text-white font-[family-name:var(--font-mono)] text-sm font-semibold rounded-xl hover:bg-slate-800 transition-colors shadow-md shadow-slate-900/10">
+               Explore idhub.xyz →
+             </a>
+           </div>
+        </motion.div>
       </div>
     </motion.div>
   );
