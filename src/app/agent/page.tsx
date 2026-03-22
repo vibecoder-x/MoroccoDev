@@ -46,22 +46,30 @@ function TwinConsole() {
   return (
     <div className="flex flex-col h-full min-h-[500px]">
       {/* Terminal dots */}
-      <div className="flex items-center gap-2 pb-3 border-b border-slate-200">
-        <div className="flex gap-1">
-          <span className="w-2 h-2 rounded-full bg-red-400/90" />
-          <span className="w-2 h-2 rounded-full bg-yellow-400/90" />
-          <span className="w-2 h-2 rounded-full bg-emerald-500/90" />
+      <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+        <div className="flex items-center gap-3">
+          <div className="flex gap-2 mr-1">
+            <span className="w-2.5 h-2.5 rounded-full bg-slate-200" />
+            <span className="w-2.5 h-2.5 rounded-full bg-slate-200" />
+            <span className="w-2.5 h-2.5 rounded-full bg-slate-200" />
+          </div>
+          <div className="flex items-center gap-2">
+            <img src="/avatar.png" alt="Agent" className="w-5 h-5 rounded-full shadow-sm object-cover" />
+            <span className="font-[family-name:var(--font-mono)] text-[10px] text-slate-500 uppercase tracking-[0.2em] font-medium mt-0.5">
+              badr_agent · live
+            </span>
+          </div>
         </div>
-        <span className="font-[family-name:var(--font-mono)] text-[10px] text-slate-500 uppercase tracking-[0.2em]">
-          badr_agent · live
-        </span>
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto space-y-2.5 py-3 custom-scrollbar min-h-0">
+      <div className="flex-1 overflow-y-auto space-y-4 py-4 custom-scrollbar min-h-0 pr-2">
         {msgs.map((m, i) => (
-          <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
-            <div className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+          <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"} gap-3 items-end`}>
+            {m.role === "assistant" && (
+              <img src="/avatar.png" alt="Badr Avatar" className="w-7 h-7 rounded-full shadow-sm shrink-0 object-cover border border-slate-200 mb-1" />
+            )}
+            <div className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
               m.role === "user"
                 ? "bg-emerald-600 text-white font-medium rounded-br-sm shadow-sm shadow-emerald-600/20"
                 : "bg-slate-50 text-slate-800 font-[family-name:var(--font-mono)] border border-slate-200 rounded-bl-sm"
@@ -69,8 +77,9 @@ function TwinConsole() {
           </div>
         ))}
         {busy && (
-          <div className="flex justify-start">
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl px-3 py-2.5 flex gap-1">
+          <div className="flex justify-start gap-3 items-end">
+            <img src="/avatar.png" alt="Badr Avatar" className="w-7 h-7 rounded-full shadow-sm shrink-0 object-cover border border-slate-200 mb-1" />
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 flex gap-1.5 rounded-bl-sm items-center h-[44px]">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-bounce" style={{ animationDelay: "0ms" }} />
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-bounce" style={{ animationDelay: "150ms" }} />
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-bounce" style={{ animationDelay: "300ms" }} />
