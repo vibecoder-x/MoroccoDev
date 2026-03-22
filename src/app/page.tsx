@@ -93,7 +93,7 @@ export default function DashboardPage() {
               </p>
               <div className="inline-flex items-center gap-2 mt-4 px-3 py-1.5 rounded-full bg-emerald-500 text-white font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-wider font-bold shadow-sm shadow-emerald-500/20">
                 <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                Verified Buyer Status // Program Participant
+                Verified Digital Transformation Leader
               </div>
               <p className="text-slate-600 text-sm leading-relaxed mt-4 max-w-lg">
                 Buying, building, and scaling the <span className="text-slate-900 font-semibold">Agentic Web</span> for Morocco.
@@ -113,7 +113,7 @@ export default function DashboardPage() {
               <div className="h-px bg-slate-200 w-24 mx-auto md:ml-auto md:mr-0" />
               <div>
                 <div className="font-[family-name:var(--font-mono)] text-4xl font-black text-slate-900">10<span className="text-emerald-500">+</span></div>
-                <div className="text-[10px] font-[family-name:var(--font-mono)] text-slate-400 uppercase tracking-wider mt-0.5">AI Projects Acquired</div>
+                <div className="text-[10px] font-[family-name:var(--font-mono)] text-slate-400 uppercase tracking-wider mt-0.5">Strategic Assets Managed</div>
               </div>
             </div>
           </div>
@@ -207,39 +207,70 @@ export default function DashboardPage() {
            </div>
         </motion.div>
 
-        {/* ── 4. Venture Manifesto (Full Width) ── */}
-        <motion.div variants={fade} className={`${card} md:col-span-2 xl:col-span-4 p-8 flex flex-col items-center text-center bg-gradient-to-br from-white to-slate-50`}>
-          <h2 className="font-[family-name:var(--font-mono)] text-2xl font-black text-slate-900 mb-4">Why MoroccoDev?</h2>
-          <p className="text-slate-600 text-sm leading-relaxed max-w-4xl">
-            MoroccoDev is a specialized venture studio and investment hub. We bridge the gap between mathematics, blockchain intelligence, and agentic AI to build sovereign infrastructure for the Kingdom and the MENA region. We don&apos;t just build; we acquire and scale high-alpha digital assets.
-          </p>
+        {/* ── 4. Agentic Morocco Hub (Full Width) ── */}
+        <motion.div variants={fade} className={`${card} md:col-span-2 xl:col-span-4 p-8 flex flex-col md:flex-row gap-8 bg-white relative overflow-hidden group`}>
+          <div className="flex-1 z-10">
+            <h2 className="font-[family-name:var(--font-mono)] text-3xl font-black text-slate-900 mb-2">AgenticMorocco.com</h2>
+            <p className="text-emerald-600 font-[family-name:var(--font-mono)] text-sm uppercase tracking-widest font-bold mb-6">
+              Primary Ecosystem
+            </p>
+            <p className="text-slate-600 text-sm leading-relaxed max-w-xl mb-8">
+              Building the Sovereign AI Operating System for the Kingdom. Our hub unifies specialized sectors to accelerate Morocco's digital transformation via sovereign, autonomous protocols.
+            </p>
+          </div>
+
+          <div className="flex-1 grid grid-cols-1 gap-4 z-10 w-full mb-4 md:mb-0">
+            {/* Sub-vertical 1 */}
+            <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 shadow-sm transition-shadow hover:shadow-md hover:border-emerald-100">
+              <div className="p-2.5 bg-emerald-100/50 text-emerald-600 rounded-lg shrink-0">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <div>
+                <h4 className="font-[family-name:var(--font-mono)] text-sm font-bold text-slate-900">AgenticMena.com</h4>
+                <p className="text-slate-500 text-xs mt-1">Regional Scaling & Deployment</p>
+              </div>
+            </div>
+            {/* Sub-vertical 2 */}
+            <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 shadow-sm transition-shadow hover:shadow-md hover:border-blue-100">
+              <div className="p-2.5 bg-blue-100/50 text-blue-600 rounded-lg shrink-0">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+              </div>
+              <div>
+                <h4 className="font-[family-name:var(--font-mono)] text-sm font-bold text-slate-900">MoroccoEdu.com</h4>
+                <p className="text-slate-500 text-xs mt-1">Education & AI Literacy</p>
+              </div>
+            </div>
+            {/* Sub-vertical 3 */}
+            <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 shadow-sm transition-shadow hover:shadow-md hover:border-orange-100">
+              <div className="p-2.5 bg-orange-100/50 text-orange-600 rounded-lg shrink-0">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+              </div>
+              <div>
+                <h4 className="font-[family-name:var(--font-mono)] text-sm font-bold text-slate-900">AutoMorocco.com</h4>
+                <p className="text-slate-500 text-xs mt-1">Industrial & Logistics Automation</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
-        {/* ── 5. GITEX 2026 Buying Intent (Half Width md) ── */}
+        {/* ── 5. Marrakech Pilot (Half Width md) ── */}
         <motion.div variants={fade} className={`${card} md:col-span-1 xl:col-span-2 p-8 flex flex-col justify-between group`}>
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2.5 bg-emerald-50 rounded-xl">
                 <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="font-[family-name:var(--font-mono)] text-xl font-bold text-slate-900">GITEX 2026 Buying Intent</h3>
+              <h3 className="font-[family-name:var(--font-mono)] text-xl font-bold text-slate-900">Marrakech:<br/>The Pilot Smart City</h3>
             </div>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <span className="text-emerald-500 mt-0.5">▹</span>
-                <span className="text-slate-600 text-sm font-medium">Seeking GPU Cloud &amp; Vector DB partners.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-emerald-500 mt-0.5">▹</span>
-                <span className="text-slate-600 text-sm font-medium">Acquiring niche AI-agentic SaaS protocols.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-emerald-500 mt-0.5">▹</span>
-                <span className="text-slate-600 text-sm font-medium">Exploring Sovereign LLM frameworks for Morocco.</span>
-              </li>
-            </ul>
+            <p className="text-slate-600 text-sm leading-relaxed mb-4">
+              Our 2026 roadmap begins with Marrakech. We are deploying a localized smart-city ecosystem designed for high-density tourism and urban efficiency.
+            </p>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Once validated, this Agentic model will scale natively to Casablanca, Rabat, and Tangier.
+            </p>
           </div>
         </motion.div>
 
