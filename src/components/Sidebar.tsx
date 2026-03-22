@@ -48,14 +48,15 @@ export default function Sidebar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-64 bg-slate-950 border-r border-slate-800/50 flex-col z-50">
+      <aside className="hidden lg:flex flex-col w-64 fixed h-screen bg-white/80 backdrop-blur-2xl border-r border-slate-200 z-50">
+        
         {/* Logo */}
-        <div className="px-6 py-6 border-b border-slate-800/50">
-          <Link href="/" className="font-mono font-bold text-white tracking-tight text-lg">
-            <span className="text-emerald-400">&gt;</span> MoroccoDev
-            <span className="text-emerald-400">_</span>
+        <div className="px-6 py-8">
+          <Link href="/" className="font-mono text-xl font-black text-slate-900 flex items-center gap-2">
+            <span className="text-emerald-600">&gt;</span>
+            MoroccoDev<span className="text-emerald-600 animate-pulse">_</span>
           </Link>
-          <p className="text-[10px] font-mono text-slate-600 mt-1 tracking-widest uppercase">
+          <p className="font-[family-name:var(--font-mono)] text-[10px] text-slate-500 mt-2 uppercase tracking-widest">
             Command Center
           </p>
         </div>
@@ -70,14 +71,14 @@ export default function Sidebar() {
                 href={item.href}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg font-mono text-sm transition-all duration-200 ${
                   isActive
-                    ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                    : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                    ? "bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-sm"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                 }`}
               >
                 {item.icon}
                 {item.label}
                 {isActive && (
-                  <div className="ml-auto w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <div className="ml-auto w-1.5 h-1.5 rounded-full bg-emerald-500" />
                 )}
               </Link>
             );
@@ -85,7 +86,7 @@ export default function Sidebar() {
         </nav>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-slate-800/50">
+        <div className="px-6 py-4 border-t border-slate-200">
           <div className="flex items-center gap-2">
             <div className="status-dot" />
             <span className="text-xs font-mono text-slate-500">available</span>
@@ -97,11 +98,11 @@ export default function Sidebar() {
       </aside>
 
       {/* Mobile Top Nav */}
-      <nav className="lg:hidden fixed top-0 w-full z-50 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/50">
+      <nav className="lg:hidden fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm">
         <div className="px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="font-mono font-bold text-white text-sm">
-            <span className="text-emerald-400">&gt;</span> MoroccoDev
-            <span className="text-emerald-400">_</span>
+          <Link href="/" className="font-mono font-bold text-slate-900 text-sm">
+            <span className="text-emerald-600">&gt;</span> MoroccoDev
+            <span className="text-emerald-600">_</span>
           </Link>
           <div className="flex items-center gap-1">
             {navItems.map((item) => {
@@ -111,7 +112,7 @@ export default function Sidebar() {
                   key={item.href}
                   href={item.href}
                   className={`p-2 rounded-lg transition-colors ${
-                    isActive ? "text-emerald-400 bg-emerald-500/10" : "text-slate-500"
+                    isActive ? "text-emerald-700 bg-emerald-50 border border-emerald-200" : "text-slate-600"
                   }`}
                   title={item.label}
                 >

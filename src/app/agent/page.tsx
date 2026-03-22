@@ -46,11 +46,11 @@ function TwinConsole() {
   return (
     <div className="flex flex-col h-full min-h-[500px]">
       {/* Terminal dots */}
-      <div className="flex items-center gap-2 pb-3 border-b border-white/[0.06]">
+      <div className="flex items-center gap-2 pb-3 border-b border-slate-200">
         <div className="flex gap-1">
-          <span className="w-2 h-2 rounded-full bg-red-400/70" />
-          <span className="w-2 h-2 rounded-full bg-yellow-400/70" />
-          <span className="w-2 h-2 rounded-full bg-emerald-400/70" />
+          <span className="w-2 h-2 rounded-full bg-red-400/90" />
+          <span className="w-2 h-2 rounded-full bg-yellow-400/90" />
+          <span className="w-2 h-2 rounded-full bg-emerald-500/90" />
         </div>
         <span className="font-[family-name:var(--font-mono)] text-[10px] text-slate-500 uppercase tracking-[0.2em]">
           badr_agent · live
@@ -63,17 +63,17 @@ function TwinConsole() {
           <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
             <div className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
               m.role === "user"
-                ? "bg-emerald-500 text-slate-950 font-medium rounded-br-sm"
-                : "bg-white/[0.04] text-slate-300 font-[family-name:var(--font-mono)] border border-white/[0.06] rounded-bl-sm"
+                ? "bg-emerald-600 text-white font-medium rounded-br-sm shadow-sm shadow-emerald-600/20"
+                : "bg-slate-50 text-slate-800 font-[family-name:var(--font-mono)] border border-slate-200 rounded-bl-sm"
             }`}>{m.content}</div>
           </div>
         ))}
         {busy && (
           <div className="flex justify-start">
-            <div className="bg-white/[0.04] border border-white/[0.06] rounded-2xl px-3 py-2.5 flex gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce" style={{ animationDelay: "0ms" }} />
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce" style={{ animationDelay: "150ms" }} />
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce" style={{ animationDelay: "300ms" }} />
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl px-3 py-2.5 flex gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-bounce" style={{ animationDelay: "0ms" }} />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-bounce" style={{ animationDelay: "150ms" }} />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-bounce" style={{ animationDelay: "300ms" }} />
             </div>
           </div>
         )}
@@ -81,14 +81,14 @@ function TwinConsole() {
       </div>
 
       {/* Input */}
-      <form onSubmit={e => { e.preventDefault(); send(input); }} className="flex gap-2 pt-3 border-t border-white/[0.06]">
+      <form onSubmit={e => { e.preventDefault(); send(input); }} className="flex gap-2 pt-3 border-t border-slate-200">
         <input
           value={input} onChange={e => setInput(e.target.value)} disabled={busy}
           placeholder="Message the twin..."
-          className="flex-1 bg-white/[0.03] border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/40 font-[family-name:var(--font-mono)] disabled:opacity-50"
+          className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-300 focus:ring-1 focus:ring-emerald-300 font-[family-name:var(--font-mono)] disabled:opacity-50 transition-all"
         />
         <button type="submit" disabled={!input.trim() || busy}
-          className="px-4 rounded-xl bg-emerald-500 text-slate-950 text-sm font-bold hover:bg-emerald-400 disabled:opacity-30 transition-colors">
+          className="px-4 rounded-xl bg-emerald-600 text-white shadow-sm shadow-emerald-600/20 text-sm font-bold hover:bg-emerald-500 disabled:opacity-30 transition-colors">
           ↑
         </button>
       </form>
@@ -101,21 +101,21 @@ export default function AgentPage() {
   return (
     <motion.div className="p-6 lg:p-8 min-h-screen flex flex-col items-center justify-center text-center" variants={stagger} initial="hidden" animate="show">
       <motion.div variants={fade} className="mb-6 flex flex-col items-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 mb-4">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-[10px] font-[family-name:var(--font-mono)] text-slate-500 tracking-widest uppercase">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-white mb-4 shadow-sm shadow-slate-200/50">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="text-[10px] font-[family-name:var(--font-mono)] text-slate-500 tracking-widest uppercase font-semibold">
             Badr Agent
           </span>
         </div>
-        <h1 className="font-[family-name:var(--font-mono)] text-2xl lg:text-3xl font-bold text-white">
+        <h1 className="font-[family-name:var(--font-mono)] text-2xl lg:text-3xl font-black text-slate-900">
           Talk to my Digital Twin
         </h1>
-        <p className="text-slate-500 text-sm mt-2 max-w-lg">
+        <p className="text-slate-500 text-sm mt-3 max-w-lg leading-relaxed">
           Ask anything about my projects, Morocco AI 2030 vision, blockchain ventures, or GITEX Africa 2026.
         </p>
       </motion.div>
 
-      <motion.div variants={fade} className="backdrop-blur-xl bg-white/5 border border-white/[0.06] rounded-3xl p-6 w-full max-w-2xl text-left">
+      <motion.div variants={fade} className="bg-white border border-slate-200 shadow-sm shadow-slate-200/50 rounded-3xl p-6 w-full max-w-2xl text-left">
         <TwinConsole />
       </motion.div>
     </motion.div>

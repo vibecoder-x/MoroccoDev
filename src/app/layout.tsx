@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="bg-slate-950 text-slate-300 font-[family-name:var(--font-inter)] antialiased min-h-screen">
+      <body className="bg-slate-50 text-slate-900 font-[family-name:var(--font-inter)] antialiased min-h-screen">
         <Sidebar />
         <main className="lg:ml-64 min-h-screen pt-14 lg:pt-0">
           {children}

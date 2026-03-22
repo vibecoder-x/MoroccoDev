@@ -59,7 +59,7 @@ const ventures = [
 ];
 
 /* ─── Card Style ─── */
-const card = "backdrop-blur-xl bg-white/5 border border-white/[0.06] rounded-3xl";
+const card = "backdrop-blur-xl bg-white border border-slate-200 shadow-sm shadow-slate-200/50 rounded-3xl";
 
 /* ─── Page ─── */
 export default function DashboardPage() {
@@ -79,50 +79,50 @@ export default function DashboardPage() {
                 alt="Badr Sakine"
                 width={180}
                 height={180}
-                className="rounded-3xl border-2 border-emerald-500/20 object-cover shadow-lg shadow-emerald-500/5"
+                className="rounded-3xl border border-slate-200 object-cover shadow-md shadow-slate-200"
               />
             </div>
 
             {/* Bio */}
             <div className="flex-1 text-center md:text-left">
-              <h1 className="font-[family-name:var(--font-mono)] text-4xl lg:text-5xl font-black text-white tracking-tight">
+              <h1 className="font-[family-name:var(--font-mono)] text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
                 Badr Sakine
               </h1>
-              <p className="text-emerald-400 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.3em] mt-2">
+              <p className="text-emerald-600 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.3em] mt-2">
                 Solopreneur & Venture Builder
               </p>
-              <p className="text-slate-400 text-sm leading-relaxed mt-4 max-w-lg">
-                Buying, building, and scaling the <span className="text-white font-semibold">Agentic Web</span> for Morocco.
+              <p className="text-slate-600 text-sm leading-relaxed mt-4 max-w-lg">
+                Buying, building, and scaling the <span className="text-slate-900 font-semibold">Agentic Web</span> for Morocco.
                 10+ years in Mathematics education, now engineering sovereign AI infrastructure, blockchain indexers, and automated media platforms for the Kingdom and the MENA region.
               </p>
               <div className="flex items-center gap-4 mt-5 justify-center md:justify-start">
-                <a href="https://x.com/vibecoder_x" target="_blank" className="text-slate-500 hover:text-emerald-400 transition-colors text-xs font-[family-name:var(--font-mono)]">𝕏 @vibecoder_x</a>
-                <span className="text-slate-800">·</span>
-                <a href="https://linkedin.com/in/badrs" target="_blank" className="text-slate-500 hover:text-emerald-400 transition-colors text-xs font-[family-name:var(--font-mono)]">LinkedIn</a>
-                <span className="text-slate-800">·</span>
-                <span className="text-slate-600 text-xs font-[family-name:var(--font-mono)]">Marrakech 🇲🇦</span>
+                <a href="https://x.com/vibecoder_x" target="_blank" className="text-slate-500 hover:text-emerald-600 transition-colors text-xs font-[family-name:var(--font-mono)]">𝕏 @vibecoder_x</a>
+                <span className="text-slate-300">·</span>
+                <a href="https://linkedin.com/in/badrs" target="_blank" className="text-slate-500 hover:text-emerald-600 transition-colors text-xs font-[family-name:var(--font-mono)]">LinkedIn</a>
+                <span className="text-slate-300">·</span>
+                <span className="text-slate-500 text-xs font-[family-name:var(--font-mono)]">Marrakech 🇲🇦</span>
               </div>
             </div>
 
             {/* Stats */}
             <div className="shrink-0 text-center md:text-right space-y-4">
               <div>
-                <div className="font-[family-name:var(--font-mono)] text-4xl font-black text-white">2,500<span className="text-emerald-400">+</span></div>
-                <div className="text-[10px] font-[family-name:var(--font-mono)] text-slate-500 uppercase tracking-wider mt-0.5">Managed Domains</div>
+                <div className="font-[family-name:var(--font-mono)] text-4xl font-black text-slate-900">2,500<span className="text-emerald-500">+</span></div>
+                <div className="text-[10px] font-[family-name:var(--font-mono)] text-slate-400 uppercase tracking-wider mt-0.5">Managed Domains</div>
               </div>
-              <div className="h-px bg-white/[0.06] w-24 mx-auto md:ml-auto md:mr-0" />
+              <div className="h-px bg-slate-200 w-24 mx-auto md:ml-auto md:mr-0" />
               <div>
-                <div className="font-[family-name:var(--font-mono)] text-4xl font-black text-white">10<span className="text-emerald-400">+</span></div>
-                <div className="text-[10px] font-[family-name:var(--font-mono)] text-slate-500 uppercase tracking-wider mt-0.5">AI Projects Acquired</div>
+                <div className="font-[family-name:var(--font-mono)] text-4xl font-black text-slate-900">10<span className="text-emerald-500">+</span></div>
+                <div className="text-[10px] font-[family-name:var(--font-mono)] text-slate-400 uppercase tracking-wider mt-0.5">AI Projects Acquired</div>
               </div>
             </div>
           </div>
 
           {/* Domain Marquee — seamless infinite scroll */}
-          <div className="mt-8 pt-6 border-t border-white/[0.06]">
+          <div className="mt-8 pt-6 border-t border-slate-200">
             <div className="relative overflow-hidden h-6">
-              <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950/80 to-transparent z-10" />
-              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950/80 to-transparent z-10" />
+              <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent z-10" />
+              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent z-10" />
               <div className="marquee-track">
                 <div className="marquee-content">
                   {domainNames.map((d, i) => (
@@ -142,37 +142,37 @@ export default function DashboardPage() {
         {/* ── 2. Project Cards with Website Previews ── */}
         {ventures.map((v) => (
           <motion.div key={v.name} variants={fade}
-            className={`${card} p-0 flex flex-col overflow-hidden group hover:border-emerald-500/15 transition-colors`}
+            className={`${card} p-0 flex flex-col overflow-hidden group hover:border-emerald-300 hover:shadow-md hover:shadow-emerald-100 transition-all`}
           >
             {/* Website Preview Thumbnail */}
-            <a href={v.url} target="_blank" rel="noopener noreferrer" className="block relative">
-              <div className="relative w-full h-44 overflow-hidden bg-slate-900 cursor-pointer">
+            <a href={v.url} target="_blank" rel="noopener noreferrer" className="block relative border-b border-slate-100">
+              <div className="relative w-full h-44 overflow-hidden bg-slate-100 cursor-pointer">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={v.thumb}
                   alt={`${v.name} homepage`}
-                  className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                  className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
               </div>
             </a>
 
             {/* Info */}
-            <div className="p-5 flex-1 flex flex-col justify-between">
+            <div className="p-5 flex-1 flex flex-col justify-between bg-white">
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="font-[family-name:var(--font-mono)] text-xs text-white font-semibold">{v.name}</span>
+                  <span className="font-[family-name:var(--font-mono)] text-xs text-slate-900 font-bold">{v.name}</span>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[9px] font-[family-name:var(--font-mono)] text-emerald-400/70 uppercase tracking-wider">Live</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-[9px] font-[family-name:var(--font-mono)] text-emerald-600 uppercase tracking-wider font-semibold">Live</span>
                   </div>
                 </div>
                 <p className="text-slate-500 text-[11px] leading-relaxed">{v.value}</p>
               </div>
-              <div className="mt-3 pt-3 border-t border-white/[0.04] flex items-center justify-between">
-                <span className="text-[10px] font-[family-name:var(--font-mono)] text-slate-600">{v.domain}</span>
-                <a href={v.url} target="_blank" rel="noopener noreferrer" className="text-[10px] font-[family-name:var(--font-mono)] text-emerald-400/60 hover:text-emerald-400 transition-colors">
+              <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between">
+                <span className="text-[10px] font-[family-name:var(--font-mono)] text-slate-400">{v.domain}</span>
+                <a href={v.url} target="_blank" rel="noopener noreferrer" className="text-[10px] font-[family-name:var(--font-mono)] text-emerald-600 font-semibold hover:text-emerald-500 transition-colors">
                   Visit →
                 </a>
               </div>
