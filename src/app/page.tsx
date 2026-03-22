@@ -53,7 +53,7 @@ const ventures = [
     name: "CalculatorRobot",
     domain: "CalculatorRobot.com",
     url: "https://calculatorrobot.com",
-    thumb: "https://image.thum.io/get/width/600/crop/400/https://calculatorrobot.com",
+    thumb: "/calculatorrobot.png",
     value: "AI-powered multi-purpose calculator — math, finance, science & conversion tools.",
   },
 ];

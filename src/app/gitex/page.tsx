@@ -68,15 +68,15 @@ export default function GitexPage() {
                 infrastructure together for the Kingdom.
               </p>
 
-              <a
-                href="mailto:badr@moroccodev.com?subject=GITEX%20Africa%202026%20Meeting"
-                className="btn-shine inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-[family-name:var(--font-mono)] font-semibold text-sm rounded-xl hover:from-emerald-500 hover:to-emerald-400 transition-all duration-300 shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/30"
+              <button
+                disabled
+                className="inline-flex items-center gap-3 px-8 py-4 bg-slate-100 text-slate-400 border border-slate-200 font-[family-name:var(--font-mono)] font-semibold text-sm rounded-xl cursor-not-allowed transition-all duration-300"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                Schedule Meeting
-              </a>
+                Coming Soon
+              </button>
             </div>
           </div>
         </motion.div>
