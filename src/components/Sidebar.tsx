@@ -51,18 +51,18 @@ export default function Sidebar() {
       <aside className="hidden lg:flex flex-col w-64 fixed h-screen bg-white/80 backdrop-blur-2xl border-r border-slate-200 z-50">
         
         {/* Logo */}
-        <div className="px-6 py-8">
-          <Link href="/" className="font-mono text-xl font-black text-slate-900 flex items-center gap-2">
-            <span className="text-emerald-600">&gt;</span>
-            MoroccoDev<span className="text-emerald-600 animate-pulse">_</span>
+        <div className="px-6 pt-8 pb-4">
+          <Link href="/" className="flex items-center">
+            <img 
+              src="/MD_icon_txt.png" 
+              alt="MoroccoDev Command Center" 
+              className="h-16 w-auto object-contain"
+            />
           </Link>
-          <p className="font-[family-name:var(--font-mono)] text-[10px] text-slate-500 mt-2 uppercase tracking-widest">
-            Command Center
-          </p>
         </div>
 
         {/* Nav */}
-        <nav className="flex-1 px-4 py-6 space-y-1">
+        <nav className="flex-1 px-4 pt-2 pb-6 space-y-1">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -100,9 +100,12 @@ export default function Sidebar() {
       {/* Mobile Top Nav */}
       <nav className="lg:hidden fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm">
         <div className="px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="font-mono font-bold text-slate-900 text-sm">
-            <span className="text-emerald-600">&gt;</span> MoroccoDev
-            <span className="text-emerald-600">_</span>
+          <Link href="/" className="flex items-center">
+            <img 
+              src="/MD_icon_txt.png" 
+              alt="MoroccoDev" 
+              className="h-10 w-auto object-contain"
+            />
           </Link>
           <div className="flex items-center gap-1">
             {navItems.map((item) => {
