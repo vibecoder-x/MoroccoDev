@@ -54,7 +54,7 @@ export default function Sidebar() {
         <div className="px-6 pt-8 pb-4">
           <Link href="/" className="flex items-center">
             <img 
-              src="/MD_icon_txt.png?v=2" 
+              src="/MD_icon_txt.png?v=3" 
               alt="MoroccoDev Command Center" 
               className="h-16 w-auto object-contain"
             />
@@ -102,7 +102,7 @@ export default function Sidebar() {
         <div className="px-4 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <img 
-              src="/MD_icon_txt.png?v=2" 
+              src="/MD_icon_txt.png?v=3" 
               alt="MoroccoDev" 
               className="h-10 w-auto object-contain"
             />

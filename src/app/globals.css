@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  --color-emerald-50: #eef2ff;
+  --color-emerald-100: #e0e7ff;
+  --color-emerald-200: #c9cafc;
+  --color-emerald-300: #7aa3fc;
+  --color-emerald-400: #4481f8;
+  --color-emerald-500: #1d26f4;
+  --color-emerald-600: #161db8;
+  --color-emerald-700: #10158c;
+  --color-emerald-800: #0b0e5e;
+  --color-emerald-900: #060731;
+}
+
 /* ===== Custom Scrollbar ===== */
 ::-webkit-scrollbar {
   width: 6px;
@@ -34,11 +47,11 @@
   pointer-events: none;
 }
 .card-glow:hover::before {
-  background: linear-gradient(135deg, #10b981, #6366f1, #10b981);
+  background: linear-gradient(135deg, #1d26f4, #6366f1, #1d26f4);
 }
 .card-glow:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(16, 185, 129, 0.08), 0 0 60px rgba(99, 102, 241, 0.04);
+  box-shadow: 0 0 30px rgba(29, 38, 244, 0.08), 0 0 60px rgba(99, 102, 241, 0.04);
 }
 
 /* ===== GITEX Pulse Glow ===== */
@@ -52,7 +65,7 @@
   inset: -2px;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(135deg, #10b981, #a78bfa, #f472b6, #10b981);
+  background: linear-gradient(135deg, #1d26f4, #a78bfa, #f472b6, #1d26f4);
   background-size: 300% 300%;
   animation: gitex-border 4s ease infinite;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -65,7 +78,7 @@
   position: absolute;
   inset: -8px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(167, 139, 250, 0.1), rgba(244, 114, 182, 0.08));
+  background: linear-gradient(135deg, rgba(29, 38, 244, 0.15), rgba(167, 139, 250, 0.1), rgba(244, 114, 182, 0.08));
   background-size: 300% 300%;
   animation: gitex-border 4s ease infinite;
   filter: blur(20px);
@@ -83,13 +96,13 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 6px #10b981;
+  background: #1d26f4;
+  box-shadow: 0 0 6px #1d26f4;
   animation: dotPulse 2s ease-in-out infinite;
 }
 @keyframes dotPulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 6px #10b981; }
-  50% { opacity: 0.5; box-shadow: 0 0 12px #10b981; }
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px #1d26f4; }
+  50% { opacity: 0.5; box-shadow: 0 0 12px #1d26f4; }
 }
 
 /* ===== Button shine ===== */
@@ -125,7 +138,7 @@
 .cursor-blink::after {
   content: '█';
   animation: blink 1s step-end infinite;
-  color: #10b981;
+  color: #1d26f4;
   margin-left: 2px;
 }
 @keyframes blink {
