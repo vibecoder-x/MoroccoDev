@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
+import MeetingModal from "@/components/MeetingModal";
 
 /* ─── Animation ─── */
 const stagger = {
@@ -63,8 +65,12 @@ const card = "backdrop-blur-xl bg-white border border-slate-200 shadow-sm shadow
 
 /* ─── Page ─── */
 export default function DashboardPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <motion.div className="p-4 lg:p-6" variants={stagger} initial="hidden" animate="show">
+    <>
+      <MeetingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <motion.div className="p-4 lg:p-6" variants={stagger} initial="hidden" animate="show">
 
       {/* ── Bento Grid (4-col) ── */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
@@ -301,12 +307,16 @@ export default function DashboardPage() {
               </a>
             </div>
 
-            <a href="mailto:badr@moroccodev.com?subject=Strategic%20Meeting%20Request" className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-emerald-600 text-white font-[family-name:var(--font-mono)] text-sm font-bold rounded-xl hover:bg-emerald-500 transition-colors shadow-md shadow-emerald-600/20">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-emerald-600 text-white font-[family-name:var(--font-mono)] text-sm font-bold rounded-xl hover:bg-emerald-500 transition-colors shadow-md shadow-emerald-600/20"
+            >
               Request Strategic Meeting →
-            </a>
+            </button>
           </div>
         </motion.div>
       </div>
     </motion.div>
+    </>
   );
 }
