@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
+import MeetingModal from "@/components/MeetingModal";
 
 const topics = [
   "Sovereign AI Infrastructure for Morocco",
@@ -23,7 +25,11 @@ const item = {
 };
 
 export default function GitexPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
+    <>
+    <MeetingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     <motion.div
       className="p-6 lg:p-8"
       variants={container}
@@ -63,19 +69,27 @@ export default function GitexPage() {
                 </span>
               </h2>
 
+              <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 bg-indigo-50 border border-indigo-100 rounded-full">
+                <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span className="font-[family-name:var(--font-mono)] text-xs text-indigo-700 font-bold uppercase tracking-wider">
+                  Present: April 7, 8 & 9
+                </span>
+              </div>
+
               <p className="text-slate-600 text-sm leading-relaxed mb-8 max-w-md">
-                Book a 1-on-1 meeting to discuss how we can build sovereign AI
-                infrastructure together for the Kingdom.
+                I will be physically present at the event traversing the floor and engaged in discussions. Book a 1-on-1 meeting to discuss how we can build sovereign AI infrastructure together for the Kingdom.
               </p>
 
               <button
-                disabled
-                className="inline-flex items-center gap-3 px-8 py-4 bg-slate-100 text-slate-400 border border-slate-200 font-[family-name:var(--font-mono)] font-semibold text-sm rounded-xl cursor-not-allowed transition-all duration-300"
+                onClick={() => setIsModalOpen(true)}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 text-white shadow-md shadow-emerald-500/20 font-[family-name:var(--font-mono)] font-bold text-sm rounded-xl hover:bg-emerald-500 transition-all duration-300"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
-                Coming Soon
+                Schedule Meeting →
               </button>
             </div>
           </div>
@@ -150,5 +164,6 @@ export default function GitexPage() {
         </motion.div>
       </div>
     </motion.div>
+    </>
   );
 }
