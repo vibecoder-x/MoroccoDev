@@ -52,11 +52,11 @@ export default function Sidebar() {
         
         {/* Logo */}
         <div className="px-6 pt-8 pb-4">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex shrink-0 items-center">
             <img 
               src="/MD_icon_txt.png?v=3" 
               alt="MoroccoDev Command Center" 
-              className="h-16 w-auto object-contain"
+              className="h-14 w-auto shrink-0 object-contain"
             />
           </Link>
         </div>
@@ -100,11 +100,11 @@ export default function Sidebar() {
       {/* Mobile Top Nav */}
       <nav className="lg:hidden fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm">
         <div className="px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex shrink-0 items-center">
             <img 
               src="/MD_icon_txt.png?v=3" 
               alt="MoroccoDev" 
-              className="h-10 w-auto object-contain"
+              className="h-8 md:h-10 w-[140px] shrink-0 object-contain object-left"
             />
           </Link>
           <div className="flex items-center gap-1">
